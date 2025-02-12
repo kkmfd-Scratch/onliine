@@ -56,10 +56,17 @@ var def_channels = [
     },
     {
         id: 'onliine',
-        title: 'Onliine Channel',
+        title: 'Channel Refresh',
         assets: 'assets/channels/',
         channelart: 'channelart/',
         target: 'reset.html'
+    },
+    {
+        id: 'turbowarp',
+        title: 'Turbowarp Channel',
+        assets: 'assets/channels/',
+        channelart: 'channelart/',
+        target: 'shop/turbowarpeditor.html'
     }
 ]
 

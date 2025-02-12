@@ -67,6 +67,21 @@ window.addEventListener("load", () => {
                 $('.home-menu')[0].ariaLabel = 'on';
             }
         }, false);
+        document.addEventListener('keydown', function(e) {
+            if (e.shiftKey && e.ctrlKey) {
+                e.preventDefault();
+            if ($('.home-menu')[0].ariaLabel !== 'on') {
+                lastBgMusicState = getBGMusicState();
+                // Get bgMusic intro state & pause if it's playing
+                if (getBGMusicState().intro) bgMusicIntroToggle();
+                // Get bgMusic main state & pause if it's playing
+                if (getBGMusicState().main) bgMusicToggle();
+                playSFX(`home-in.mp3`, userConfig.sfxVol);
+                $(".home-menu").css("display", "grid");
+                $('.home-menu')[0].ariaLabel = 'on';
+            }
+            }
+        }, false);
     }
     else {
         document.attachEvent('oncontextmenu', function() {
